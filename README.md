@@ -176,14 +176,10 @@ Memory paging is a memory management technique that divides the physical memory 
 
 XV6 employs various mechanisms to achieve process synchronization:
 
-- Spinlocks: Spinlocks are simple synchronization primitives that prevent concurrent access to critical sections of code by using a busy-waiting mechanism. A process attempting to acquire a spinlock repeatedly checks its state until it becomes available.
-
-- Condition Variables: Condition variables are used in conjunction with spinlocks to coordinate the execution of processes that need to wait for specific events or conditions to occur before proceeding. They allow processes to block and wait for a signal from another process.
-
-- Semaphores: Semaphores are synchronization primitives that maintain a count of available resources and allow processes to acquire or release those resources. They are useful for managing access to shared resources with a limited capacity.
-
-- Barriers: Barriers are synchronization primitives that ensure all participating processes reach a specific point before proceeding. They are commonly used in parallel algorithms to synchronize the completion of phases or stages.
-
+    - Spinlocks: Prevent simultaneous access to critical code sections using busy-waiting.
+    - Condition Variables: Coordinate processes waiting for specific events alongside spinlocks.
+    - Semaphores: Manage shared resource access with a count, allowing acquisition/release.
+    - Barriers: Ensure all involved processes reach a designated point before continuing. Commonly used in parallel algorithms for stage synchronization.
 - 18
   Interrupts in XV6 allow the operating system to respond to asynchronous events, switch between processes, handle I/O efficiently, and deal with errors. When an interrupt occurs, the processor jumps to an interrupt handler, which saves the processor's state, executes the necessary code, and restores the state before returning. Interrupts are essential for enabling responsive system operation.
 - 19
