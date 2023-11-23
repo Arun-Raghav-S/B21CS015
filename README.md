@@ -183,3 +183,23 @@ XV6 employs various mechanisms to achieve process synchronization:
 - Semaphores: Semaphores are synchronization primitives that maintain a count of available resources and allow processes to acquire or release those resources. They are useful for managing access to shared resources with a limited capacity.
 
 - Barriers: Barriers are synchronization primitives that ensure all participating processes reach a specific point before proceeding. They are commonly used in parallel algorithms to synchronize the completion of phases or stages.
+
+- 18
+  Interrupts in XV6 allow the operating system to respond to asynchronous events, switch between processes, handle I/O efficiently, and deal with errors. When an interrupt occurs, the processor jumps to an interrupt handler, which saves the processor's state, executes the necessary code, and restores the state before returning. Interrupts are essential for enabling responsive system operation.
+- 19
+      Virtual Memory in XV6: XV6 uses paging to manage virtual memory, dividing physical memory and a process's address space into fixed-size pages. The page table maps virtual to physical pages, translating addresses via the MMU. Page faults trigger disk loading for missing pages.
+
+    -Advantages:
+        - Efficient Memory Use: Enables shared physical memory among multiple processes.
+        - Larger Address Space: Provides expanded address spaces for memory-intensive applications.
+        - Protection & Isolation: Ensures process isolation, preventing memory corruption and enhancing security.
+        - Demand Paging: Loads only required parts of a process's address space into physical memory, reducing memory usage.
+- 20
+   - BIOS Initialization: Self-test, hardware setup, locates boot loader.
+   -  Boot Loader Execution: Loads XV6 kernel into memory.
+   - Kernel Entry: Starts initial setup and configuration.
+   - Memory Setup: Establishes page table, sets up virtual memory.
+   - Device Initialization: Starts essential hardware device setup.
+   - Process Creation: Creates initial process for user shell.
+   - Shell Execution: Runs the user shell for command-line access.
+   - System Ready: XV6 ready for user commands and applications.
